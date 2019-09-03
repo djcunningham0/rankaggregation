@@ -6,6 +6,7 @@ following methods are supported:
 
 * Instant Runoff Voting
 * Borda count
+* Dowdall system (variant of Borda count)
 * "Average rank" -- just take the average rank of each item across all lists. I
   don't know if there is a real name for this method.
 
@@ -36,7 +37,9 @@ of a single base ranker.
 >>> rank_list = [['A', 'B', 'C'], ['B', 'A', 'C'], ['C', 'D', 'A']]
 >>> agg.instant_runoff(rank_list)
 ['A', 'B', 'C', 'D']
->>> agg.average_rank(rank_list)
-[('B', 1.5), ('A', 2.0), ('D', 2.0), ('C', 2.3333333333333335)]
 >>> agg.borda(rank_list)
 [('A', 12), ('C', 11), ('B', 9.333333333333334), ('D', 4.666666666666667)]
+>>> agg.dowdall(rank_list)
+[('A', 1.8333333333333333), ('C', 1.6666666666666665), ('B', 1.5), ('D', 0.5)]
+>>> agg.average_rank(rank_list)
+[('B', 1.5), ('A', 2.0), ('D', 2.0), ('C', 2.3333333333333335)]

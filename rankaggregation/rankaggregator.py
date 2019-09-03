@@ -84,7 +84,6 @@ class RankAggregator(object):
         elif unranked not in ['split', 'min']:
             raise ValueError("unranked method must be one of ['split', 'min']")
 
-        rank_list = rank_list.copy()
         all_candidates = set().union(*rank_list)
         n_candidates = len(all_candidates)
         scores = {}.fromkeys(all_candidates, 0)
@@ -101,5 +100,14 @@ class RankAggregator(object):
                 else:
                     # should never reach this point if input validation is done correctly
                     raise ValueError('invalid value for unranked parameter')
+
+        return utils.sort_by_value(scores, reverse=True)
+
+    def dowdall(self, rank_list):
+        all_candidates = set().union(*rank_list)
+        scores = {}.fromkeys(all_candidates, 0)
+        for lst in rank_list:
+            for i, candidate in enumerate(lst):
+                scores[candidate] += 1 / (i + 1)
 
         return utils.sort_by_value(scores, reverse=True)
