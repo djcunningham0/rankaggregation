@@ -38,7 +38,7 @@ of a single base ranker.
 >>> agg.instant_runoff(rank_list)
 ['A', 'B', 'C', 'D']
 >>> agg.borda(rank_list)
-[('A', 12), ('C', 11), ('B', 9.333333333333334), ('D', 4.666666666666667)]
+[('A', 9), ('B', 8.0), ('C', 8), ('D', 5.0)]
 >>> agg.dowdall(rank_list)
 [('A', 1.8333333333333333), ('C', 1.6666666666666665), ('B', 1.5), ('D', 0.5)]
 >>> agg.average_rank(rank_list)

@@ -90,10 +90,10 @@ class RankAggregator(object):
         for candidate in all_candidates:
             for lst in rank_list:
                 if candidate in lst:
-                    scores[candidate] += (len(all_candidates) - lst.index(candidate) + min_score)
+                    scores[candidate] += (n_candidates - lst.index(candidate) - 1 + min_score)
                 elif unranked == 'split':
                     # split points evenly among unranked candidates
-                    scores[candidate] += (sum(range(n_candidates-len(lst))) + min_score) / len(lst)
+                    scores[candidate] += (sum(range(n_candidates - len(lst) + min_score))) / (n_candidates - len(lst))
                 elif unranked == 'min':
                     # all unranked candidates get minimum score
                     scores[candidate] += min_score

@@ -7,7 +7,7 @@ def readme():
 
 setup(
     name='rankaggregation',
-    version='0.1.1',  # TODO: automatically sync this with __init__.py
+    version='0.1.2',  # TODO: automatically sync this with __init__.py
     description='Python implementations of rank aggregation methods for ranked lists.',
     long_description=readme(),
     keywords='rank aggregation ranked lists instant runoff irv borda count',
