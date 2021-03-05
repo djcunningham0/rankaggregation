@@ -20,9 +20,9 @@ each base ranker does not necessarily rank every item).
 Installation
 ------------
 
-Install from PyPI:
+Install from GitHub:
 
-``pip install rankaggregation``
+``pip install git+https://github.com/djcunningham0/rankaggregation.git``
 
 
 Example usage
